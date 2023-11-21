@@ -11,7 +11,25 @@ namespace GroupLogFiles
 {
     internal class HandleFiles
     {
-        public HandleFiles() { }
+        private string logFile;
+        private string logFileDirectory;
+        public HandleFiles() 
+        {
+            this.logFile = String.Empty;
+            this.logFileDirectory = String.Empty; 
+        }
+
+        public string LogFile
+        {
+            get { return logFile; }
+            set { logFile = value; }
+        }
+
+        public string LogFileDirectory
+        {
+            get { return logFileDirectory; }
+            set { logFileDirectory = value; }
+        }
 
         public string PromptForLogFilePath()
         {
@@ -27,7 +45,7 @@ namespace GroupLogFiles
             return null;
         }
 
-        public string LocateLogFileDirectory()
+        public string PromptForLogFileDirectory()
         {
             using (FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog())
             {
@@ -45,6 +63,26 @@ namespace GroupLogFiles
                 }
             }
         }
+
+        public bool DoesDirectoryExist()
+        {
+            return Directory.Exists(GetDirectoryFromConfig());
+        }
+
+        public string GetDirectoryFromConfig()
+        {
+            return ConfigurationManager.AppSettings["logFileDirectory"];
+        }
+
+        public void UpdateLogDirectoryInConfig(string logFileDirectory)
+        {
+            Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+            config.AppSettings.Settings["logFileDirectory"].Value = logFileDirectory;
+            config.Save(ConfigurationSaveMode.Modified);
+
+            ConfigurationManager.RefreshSection("appSettings");
+        }
+
         public void UpdateLogPathInConfig(string logPath)
         {
             Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
