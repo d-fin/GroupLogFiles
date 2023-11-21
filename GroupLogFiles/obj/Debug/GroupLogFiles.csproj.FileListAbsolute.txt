@@ -1,0 +1,7 @@
+C:\Users\David\source\repos\GroupLogFiles\GroupLogFiles\bin\Debug\GroupLogFiles.exe.config
+C:\Users\David\source\repos\GroupLogFiles\GroupLogFiles\bin\Debug\GroupLogFiles.exe
+C:\Users\David\source\repos\GroupLogFiles\GroupLogFiles\bin\Debug\GroupLogFiles.pdb
+C:\Users\David\source\repos\GroupLogFiles\GroupLogFiles\obj\Debug\GroupLogFiles.csproj.AssemblyReference.cache
+C:\Users\David\source\repos\GroupLogFiles\GroupLogFiles\obj\Debug\GroupLogFiles.csproj.CoreCompileInputs.cache
+C:\Users\David\source\repos\GroupLogFiles\GroupLogFiles\obj\Debug\GroupLogFiles.exe
+C:\Users\David\source\repos\GroupLogFiles\GroupLogFiles\obj\Debug\GroupLogFiles.pdb
